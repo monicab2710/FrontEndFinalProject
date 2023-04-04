@@ -1,7 +1,6 @@
-import Cita from "../features/quote/Cita";
-import { fireEvent, render, renderHook, screen } from "../test-utils"
+import Cita from "../../quote/Cita";
+import { fireEvent, render, renderHook, screen } from "../../../test-utils"
 import '@testing-library/jest-dom';;
-import CitaSlice from "../features/quote/citaSlice";
 
 describe(' test a quote  into <Citas/>', () => {
     test("search a quote by character", async () => {
@@ -51,12 +50,6 @@ describe(' test a quote  into <Citas/>', () => {
         });
 
         expect(input).toHaveDisplayValue('Milhouse')
-    })
-
-    test('get the info from the API', async () => {
-        render(<CitaSlice/>)
-
-       
     })
 
 
