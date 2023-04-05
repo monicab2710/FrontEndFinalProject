@@ -8,18 +8,14 @@ import {
   DescripcionModal,
   ImagenModal,
   TituloModal,
-  TarjetaNoticia,
-  FechaTarjetaNoticia,
-  DescripcionTarjetaNoticia,
-  ImagenTarjetaNoticia,
-  TituloTarjetaNoticia,
   ContenedorNoticias,
   ListaNoticias,
   TituloNoticias,
-  BotonLectura,
   BotonSuscribir,
   CotenedorTexto,
 } from "./styled";
+
+import TarjetaNoticias from "./components/TarjetaNoticias/TarjetaNoticia";
 
 export interface INoticiasNormalizadas {
   id: number;
@@ -73,17 +69,7 @@ const Noticias = () => {
     <ContenedorNoticias>
       <TituloNoticias>Noticias de los Simpsons</TituloNoticias>
       <ListaNoticias>
-        {noticias.map((n) => (
-          <TarjetaNoticia>
-            <ImagenTarjetaNoticia src={n.imagen} />
-            <TituloTarjetaNoticia>{n.titulo}</TituloTarjetaNoticia>
-            <FechaTarjetaNoticia>{n.fecha}</FechaTarjetaNoticia>
-            <DescripcionTarjetaNoticia>
-              {n.descripcionCorta}
-            </DescripcionTarjetaNoticia>
-            <BotonLectura onClick={() => setModal(n)}>Ver más</BotonLectura>
-          </TarjetaNoticia>
-        ))}
+        <TarjetaNoticias noticias={noticias} setModal={setModal} />
         {modal ? (
           modal.esPremium ? (
             <ContenedorModal>
