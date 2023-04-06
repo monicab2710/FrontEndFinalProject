@@ -7,7 +7,7 @@ const Bio = () => {
     INFO_SIMPSONS[NombresSimpsons.BART]
   );
 
-  const test: (nombre: NombresSimpsons) => void = (nombre) =>
+  const handleClick: (nombre: NombresSimpsons) => void = (nombre) =>
     setBioActiva(INFO_SIMPSONS[nombre]);
 
   const crearBotones = () => {
@@ -15,12 +15,12 @@ const Bio = () => {
       bioActiva.id === nombre ?
         <ButtonActive
           key={nombre as string}
-          onClick={() => test(nombre as NombresSimpsons)}
+          onClick={() => handleClick(nombre as NombresSimpsons)}
         >
           {nombre}
         </ButtonActive>
 
-        : <ButtonInactive key={nombre as string} onClick={() => test(nombre as NombresSimpsons)}> {nombre}</ButtonInactive>
+        : <ButtonInactive key={nombre as string} onClick={() => handleClick(nombre as NombresSimpsons)}> {nombre}</ButtonInactive>
 
     ));
   };

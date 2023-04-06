@@ -57,7 +57,8 @@ margin: 1rem;
 font-family: "Homer Simpson Revised", sans-serif;
 font-size: 1.4rem;
 &:hover {
-  background-color:#fdd835;
+  background-color:darkBlue;
+  color: #fff;
 }
 
 `;
